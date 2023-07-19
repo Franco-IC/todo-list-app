@@ -26,7 +26,7 @@ function CheckedItem({ task, handleStatusToggle }) {
         <CircularProgress size={25} />
       ) : (
         <FadeInAnimation>
-          <CheckCircleIcon className="fill-emerald-400 text-2xl transition-colors duration-200" />
+          <CheckCircleIcon className="text-emerald-400 text-2xl transition-colors duration-200" />
         </FadeInAnimation>
       )}
     </div>

@@ -26,7 +26,7 @@ function UncheckedItem({ task, handleStatusToggle }) {
         <CircularProgress size={25} />
       ) : (
         <FadeInAnimation>
-          <ScheduleIcon className="fill-yellow-500 text-2xl transition-colors duration-200 " />
+          <ScheduleIcon className="text-yellow-500 text-2xl transition-colors duration-200 " />
         </FadeInAnimation>
       )}
     </div>
