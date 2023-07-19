@@ -1,8 +1,7 @@
 "use client";
 
-import { useContext, useState } from "react";
-import { Context } from "@/context/Context";
-import { useSession } from "next-auth/react";
+import { useState } from "react";
+import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import Menu from "@mui/material/Menu";
@@ -13,7 +12,6 @@ import { CircularProgress } from "@mui/material";
 import FadeInAnimation from "../animations/FadeIn";
 
 function NavBar() {
-  const { handleSignOut } = useContext(Context);
   const { data: session } = useSession();
   const [anchorElement, setAnchorElement] = useState(null);
   const router = useRouter();
@@ -30,8 +28,7 @@ function NavBar() {
   function handleClick() {
     setAnchorElement(null);
 
-    router.replace("/auth/signin");
-    return handleSignOut();
+    signOut({ redirect: true, callbackUrl: "/auth/signin" });
   }
 
   return (

@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import axios from "axios";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+
 import triggerAlert from "@/utils/triggerAlert";
 import { CircularProgress } from "@mui/material";
 
@@ -74,7 +75,7 @@ function SignUpForm() {
 
       setTimeout(() => {
         return router.replace("/");
-      }, 1400);
+      }, 1000);
     } catch (error) {
       if (error.response) {
         setLoading(false);

@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import triggerAlert from "@/utils/triggerAlert";
 import { signIn } from "next-auth/react";
+
+import triggerAlert from "@/utils/triggerAlert";
 import { CircularProgress } from "@mui/material";
 
 function SignInForm() {

@@ -1,6 +1,7 @@
 "use client";
+
 import { getTasks } from "@/utils/getTasks";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { createContext, useEffect, useState } from "react";
 import { API_BASE_URL, API_KEY } from "@/utils/config";
 
@@ -87,12 +88,6 @@ export function ContextProvider({ children }) {
     }
   }
 
-  function handleSignOut() {
-    signOut({ redirect: false });
-    setLoading(true);
-    return setTasks([]);
-  }
-
   useEffect(() => {
     if (user) {
       loadTasks();
@@ -109,7 +104,6 @@ export function ContextProvider({ children }) {
         deleteTask,
         toggleTaskStatus,
         loading,
-        handleSignOut,
       }}
     >
       {children}
